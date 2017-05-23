@@ -29,18 +29,18 @@ fun ByteArray.toHexString(): String {
 
 fun main(args: Array<String>) {
 
-    var password1 = generateSequence(0) { it + 1 }
+    val hashSequence = generateSequence(0) { it + 1 }
             .map { "abbhdwsy$it".md5() }
             .filter { it.substring(0, 5) == "00000" }
+
+    var password1 = hashSequence
             .take(8)
             .map { it[5] }
             .joinToString("")
     println(password1)
 
     var password2 = charArrayOf('*', '*', '*', '*', '*', '*', '*', '*')
-    generateSequence(0) { it + 1 }
-            .map { "abbhdwsy$it".md5() }
-            .filter { it.substring(0, 5) == "00000" }
+    hashSequence
             .map { it[5] to it[6] }
             .takeWhile {
                 if (it.first.isDigit()) {
