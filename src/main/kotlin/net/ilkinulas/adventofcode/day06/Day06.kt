@@ -1,4 +1,4 @@
-package net.ilkinulas.adventofcode
+package net.ilkinulas.adventofcode.day06
 
 import java.io.File
 

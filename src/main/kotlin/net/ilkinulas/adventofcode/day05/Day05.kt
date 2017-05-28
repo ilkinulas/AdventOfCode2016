@@ -1,4 +1,4 @@
-package net.ilkinulas.adventofcode
+package net.ilkinulas.adventofcode.day05
 
 import java.nio.charset.Charset
 import java.security.MessageDigest
